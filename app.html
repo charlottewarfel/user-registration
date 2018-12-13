@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <script>
+        function check()
+        {
+            document.getElementById('f1').innerHTML = document.userform.firstname.value;
+            document.getElementById('f2').innerHTML = document.userform.lastname.value;
+            
+        }
+    </script>
+    
+    
+    <form name="userform">
+        <h2>Enter your information below:</h2>
+          <p><input type= 'text' name= 'firstname' value= 'Charlotte'>
+            <p><input type= 'text' name= 'lastname' value= 'Warfel'>
+            <p><input type= 'submit' onclick= 'check(); return false'></p>
+        </p>
+            
+     </form>
+     <p>Submit the form to verify your information:</p>
+     <p id='f1'></p>
+     <p id='f2'></p>
+     
+</body>
+</html>
