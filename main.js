@@ -51,3 +51,6 @@ function validateEmail() {
     }
     return (true);
 }
+
+// I need to verify lenght of zipcode and that it's numbers only. verify phone number, require all fields
+// put requirements on password. make State abbreivations in a dropdown. 
