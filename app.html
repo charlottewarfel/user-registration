@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,88 +8,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="main.js"></script>
-    
+
 </head>
+
 <body>
 
     <h1>Welcome</h1>
-<form name="userform">
+    <form name="userform" action="/my-handling-form-page" method="post">
 
-    
-        
-       
-    <div id="first">
-        <label for="name">Name: First</label>
+
+
+
+        <div id="first">
+            <label for="name">Name: First</label>
             <input type="text" id="firstname" value="" placeholder="Enter first name here:">
         </div>
         <div id="last">
 
             <label for="name">Last</label>
-                <input type="text" id="lastname" value="" placeholder="Enter last name here:">
-     </div>
-    <div>
-        <label for="address">Address:</label>
-            <input type="text" id="address" value="" placeholder="Enter address here:">
-    </div>
-    <div>
-                <label for="city">City:</label>
-                <input type="text" id="city" value="" placeholder="Enter city here:">
-    </div>
-    <div>
-                <label for="state">State:</label>
-                <input type="text" id="state" value="" placeholder="Enter State here:">
-    </div>
-    <div>
-        <label for="state">Zipcode:</label>
-        <input type="number" id="zipcode" value="" placeholder="Enter zipcode here:">
-</div>
-    
-    <div>
-            <label for="phone">Phone:</label>
-                <input type="number" id="phone" value="" placeholder="Enter 10-digit number here:">
+            <input type="text" id="lastname" value="" placeholder="Enter last name here:">
         </div>
         <div>
-                <label for="mail">E-mail:</label>
-                    <input type="email" id="email" value="" placeholder="Enter email here:">
-            </div>
-
-
-            <div>
-                <label for="password">Password:</label>
-                        <input type="password" id="password" value="" onkeyup='verifyPswd();' />
-                      
-            </div>
-
-            <div>
-                      <label for="confirm_password">Confirm Password:</label>
-                        <input type="password" id="confirm_password" value="" onkeyup='verifyPswd();' /> 
-                        <span id='message'></span>
-                     
-
-                      </div>
-
-          
-    
-
-    <div class="button">
-           <input type= 'submit' onclick= 'check(); return false'>
-        
+            <label for="address">Address:</label>
+            <input type="text" id="address" value="" placeholder="Enter address here:">
         </div>
-</form>
-<br>
+        <div>
+            <label for="city">City:</label>
+            <input type="text" id="city" value="" placeholder="Enter city here:">
+        </div>
+        <div>
+            <label for="state">State:</label>
+            <input type="text" id="state" value="" placeholder="Enter State here:">
+        </div>
+        <div>
+            <label for="state">Zipcode:</label>
+            <input type="integer" id="zipcode" value="" placeholder="Enter zipcode here:">
+        </div>
 
-<div class="print">
-<div id='f1'></div>
-<div id='f2'></div>
-<div id='f3'></div>
-<div id='f4'></div>
-<div id='f5'></div>
-<div id='f6'></div>
-<div id='f7'></div>
-<div id='f8'></div>
-</div>
+        <div>
+            <label for="phone">Phone:</label>
+            <input type="integer" id="phone" value="" placeholder="Enter 10-digit number here:">
+        </div>
+        <div>
+            <label for="email">EMail:</label>
+            <input type="email" id="EMail" value="" placeholder="Enter email here:">
+        </div>
+
+
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" value="" onkeyup='verifyPswd();' />
+
+        </div>
+
+        <div>
+            <label for="confirm_password">Confirm Password:</label>
+            <input type="password" id="confirm_password" value="" onkeyup='verifyPswd();' />
+            <span id='message'></span>
+
+
+        </div>
+
+
+
+
+        <div class="button">
+            <input type='submit' onclick='check(); return false'>
+
+        </div>
+    </form>
+    <br>
+
+    <div class="print">
+        <div id='f1'></div>
+        <div id='f2'></div>
+        <div id='f3'></div>
+        <div id='f4'></div>
+        <div id='f5'></div>
+        <div id='f6'></div>
+        <div id='f7'></div>
+        <div id='f8'></div>
+    </div>
 
 
 
 </body>
+
 </html>
