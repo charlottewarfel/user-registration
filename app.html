@@ -14,7 +14,7 @@
 <body>
 
     <h1>Welcome</h1>
-    <form name="userform" action="/my-handling-form-page" method="post">
+    <form name="userform" action="/my-handling-form-page" method="post" >
 
         <!-- I'm strugglig with field placement, validation of form before submit-so making fields required and having preventDefault.
              Also, you said single page app...so I need to use routes instead of having the user info print in div. I feel like I know 
@@ -22,64 +22,72 @@
 
 
 
-
-        <div id="first">
-            <label for="name">Name: First</label>
-            <input type="text" id="firstname" value="" placeholder="Enter first name here:">
-        </div>
-        <div id="last">
-
-            <label for="name">Last</label>
-            <input type="text" id="lastname" value="" placeholder="Enter last name here:">
-        </div>
-        <div>
-            <label for="address">Address:</label>
-            <input type="text" id="address" value="" placeholder="Enter address here:">
-        </div>
-        <div>
-            <label for="city">City:</label>
-            <input type="text" id="city" value="" placeholder="Enter city here:">
-        </div>
-        <div>
-            <label for="state">State:</label>
-            <input type="text" id="state" value="" placeholder="Enter State here:">
-        </div>
-        <div>
-            <label for="state">Zipcode:</label>
-            <input type="integer" id="zipcode" value="" placeholder="Enter zipcode here:">
+        <div class="wrapper">
+            <div class="container_user_name">
+                <label for="name">First</label>
+                <input type="text" id="firstname" value="" placeholder="Enter first name here:">
+            </div>
+            <div class="container_user_name">
+                <label for="name">Last</label>
+                <input type="text" id="lastname" value="" placeholder="Enter last name here:">
+            </div>
         </div>
 
-        <div>
-            <label for="phone">Phone:</label>
-            <input type="integer" id="phone" value="" placeholder="Enter 10-digit number here:">
+        <div class="wrapper">
+            <div class="container_address">
+                <label for="address">Address:</label>
+                <input type="text" id="address" value="" placeholder="Enter address here:">
+            </div>
+            
+            <div class="container_city">
+                <label for="city">City:</label>
+                <input type="text" id="city" value="" placeholder="Enter city here:">
+            </div>
+            <div class="container_state">
+                <label for="state">State:</label>
+                <input type="text" id="state" value="" placeholder="Enter State here:">
+            </div>
+            <div class="container_zipcode">
+                <label for="zipcode">Zipcode:</label>
+                <input type="integer" id="zipcode" value="" placeholder="Enter zipcode here:">
+            </div>
         </div>
-        <div>
-            <label for="email">EMail:</label>
-            <input type="email" id="EMail" value="" placeholder="Enter email here:">
-        </div>
 
+        <div class="wrapper">
+            <div class="container_phone">
+                <label for="phone">Phone:</label>
+                <input type="integer" id="phone" value="" placeholder="Enter 10-digit number here:">
+            </div>
+            <div class="container_email">
 
-
-        <div>
-            <label for="password">Password:</label>
-            <input type="password" id="password" value="" onkeyup='verifyPswd();' />
-
-        </div>
-
-        <div>
-            <label for="confirm_password">Confirm Password:</label>
-            <input type="password" id="confirm_password" value="" onkeyup='verifyPswd();' />
-            <span id='message'></span>
-
-
+                <label for="email">EMail:</label>
+                <input type="email" id="EMail" value="" placeholder="Enter email here:">
+            </div>
         </div>
 
 
 
+        <div class="wrapper">
+            <div class="container_passwd">
 
-        <div class="button">
-            <input type='submit' onclick='check(); return false'>
+                <label for="password">Password:</label>
+                <input type="password" id="password" value="" onkeyup='verifyPswd();' />
+            </div>
+            <div class="container_confirmpasswd">
+                <label for="confirm_password">Confirm:</label>
+                <input type="password" id="confirm_password" value="" onkeyup='verifyPswd();' />
+                <span id='message'></span>
 
+            </div>
+        </div>
+
+
+
+
+        <div class="wrapper">
+            <div class="button">
+                <input type="Submit" onclick='check(); return false'>
+            </div>
         </div>
     </form>
     <br>
