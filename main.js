@@ -3,14 +3,20 @@ function check(event) {
     
     event.preventDefault();
     
-    var firstNameIsValid = ValidateFirstName();
+    var firstNameIsValid = validateFirstName();
     if ( !firstNameIsValid) { 
 
         return false;
     }
 
-    var lastNameIsValid = ValidateLastName();
+    var lastNameIsValid = validateLastName();
     if ( !lastNameIsValid) { 
+
+        return false;
+    }
+
+    var zipcodeIsValid = validateZipcode();
+    if (!zipcodeIsValid) {
 
         return false;
     }
@@ -21,7 +27,7 @@ function check(event) {
         return false;
     }
 
-    var phoneIsValid = phoneNumber();
+    var phoneIsValid = validatePhoneNumber();
     if (!phoneIsValid) {
 
         return false;
@@ -96,7 +102,7 @@ var userform = document.querySelector("form")
 
 
 
-function ValidateFirstName() 
+function validateFirstName() 
 {
     var first = document.getElementById('firstname').value;
    
@@ -110,7 +116,7 @@ function ValidateFirstName()
     return true;
 }
 
-function ValidateLastName() 
+function validateLastName() 
 {
     var last = document.getElementById('lastname').value;
    
@@ -124,7 +130,22 @@ function ValidateLastName()
     return true;
 }
 
-function phoneNumber() {
+function validateZipcode() {
+var zipcode = document.userform.zipcode.value;
+var numbersOnly = document.userform.zipcode.value;
+
+if(zipcode.length === 5) {
+    return true; 
+}
+    else { 
+        alert("zipcode must be 5 digits");
+        return false;
+
+    }
+
+}
+
+function validatePhoneNumber() {
     var phonenum= /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
     if(phone.value.match(phonenum)) {
       return true;
@@ -134,6 +155,7 @@ function phoneNumber() {
       return false;
     }
   }
+
 
 function validateEmail() {
     var emailID = document.userform.email.value;
