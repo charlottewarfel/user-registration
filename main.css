@@ -4,10 +4,6 @@ h1 {
     width: 400px;
 }
 
-
-
-
-
 form {
     /* Just to center the form on the page */
     margin: 0 auto;
@@ -16,8 +12,6 @@ form {
     padding: 1em;
     border: 3px solid aqua;
     border-radius: 1em;
-
-
 }
 
 label {
@@ -25,7 +19,7 @@ label {
     display: block;
 }
 
-.print {
+#print {
     /* this is the div where user input prints after submit */
     margin: auto;
     width: 500px;
@@ -34,34 +28,24 @@ label {
     background-color: aquamarine;
 }
 
+    .wrapper {
+        /* this is the outer div */
+        margin-top: 1em;
 
-.wrapper {
-    /* this is the outer div */
-    margin-top: 1em;
 }
 
-.container_user_name {
-    /* contains first and last name */
-    display: inline-block;
-    padding: 1em;
-}
+    .inner_container {
+        /* this holds the form field */
 
-.container_address,
-.container_city,
-.container_state,
-.container_zipcode {
+        display: inline-block;
+        margin: 1em;
+    }
 
-    display: inline-block;
-    padding: 1em;
-}
 
-/* I struggled with targeting these 3 specific fields for their box size so they 
-fit on the same line. I used id...  */
+
 #city {
     width: 80px;
 }
-
-
 
 #state {
 
@@ -73,35 +57,12 @@ fit on the same line. I used id...  */
     width: 50px;
 }
 
-.container_phone,
-.container_email {
-
-    display: inline-block;
-    padding: 1em;
-}
-
-.container_passwd,
-.container_confirmpasswd {
-
-    display: inline-block;
-    padding: 1em;
-}
-
-.button {
-    /* I want to style the button to look like a button. */
+ /* .button {
+    I want to style the button to look like a button. 
     text-align: center;
     border-style: solid black;
-
-
-
-}
-
-
-
-
-
-
-
+    box-shadow :black;
+}   */
 
 input,
 textarea {
