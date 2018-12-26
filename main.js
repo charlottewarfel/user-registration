@@ -21,6 +21,13 @@ function check(event) {
         return false;
     }
 
+    var phoneIsValid = phoneNumber();
+    if (!phoneIsValid) {
+
+        return false;
+    }
+
+
     var passwordIsValid = verifyPswd();
     if (!passwordIsValid) {
 
@@ -32,51 +39,51 @@ function check(event) {
 
 
 
-    var userFirstName = document.createElement('p');
+    var userFirstName = document.createElement('div');
                         userFirstName.textContent = document.userform.firstname.value;
 
 
     var printParent = document.getElementById('print');
                         printParent.appendChild(userFirstName);
 
-    var userLastName = document.createElement('p');
+    var userLastName = document.createElement('div');
                         userLastName.textContent = document.userform.lastname.value;
                         document.getElementById('print');
                         printParent.appendChild(userLastName);
 
-    var userAddress = document.createElement('p');
+    var userAddress = document.createElement('div');
                         userAddress.textContent = document.userform.address.value;
                         document.getElementById('print');
                         printParent.appendChild(userAddress);
 
     
-    var userCity = document.createElement('p');
+    var userCity = document.createElement('div');
                         userCity.textContent = document.userform.city.value;
                         document.getElementById('print');
                         printParent.appendChild(userCity);
 
 
 
-    var userState = document.createElement('p');
+    var userState = document.createElement('div');
                         userState.textContent = document.userform.state.value;
                         document.getElementById('print');
                         printParent.appendChild(userState);
 
 
 
-    var userZipcode = document.createElement('p');
+    var userZipcode = document.createElement('div');
                         userZipcode.textContent = document.userform.zipcode.value;
                         document.getElementById('print');
                         printParent.appendChild(userZipcode);
 
 
 
-    var userPhone= document.createElement('p');
+    var userPhone= document.createElement('div');
                     userPhone.textContent = document.userform.phone.value;
                     document.getElementById('print');
                     printParent.appendChild(userPhone);
 
-    var userEmail = document.createElement('p');
+    var userEmail = document.createElement('div');
                         userEmail.textContent = document.userform.email.value;
                         document.getElementById('print');
                         printParent.appendChild(userEmail);
@@ -116,6 +123,17 @@ function ValidateLastName()
     
     return true;
 }
+
+function phoneNumber() {
+    var phonenum= /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+    if(phone.value.match(phonenum)) {
+      return true;
+    }
+    else {
+      alert("10 digits required for phone number");
+      return false;
+    }
+  }
 
 function validateEmail() {
     var emailID = document.userform.email.value;
