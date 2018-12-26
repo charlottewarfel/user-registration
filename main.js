@@ -131,14 +131,14 @@ function validateLastName()
 }
 
 function validateZipcode() {
-var zipcode = document.userform.zipcode.value;
-var numbersOnly = document.userform.zipcode.value;
+    var zipcode = document.userform.zipcode.value;
+    var numbersOnly = document.userform.zipcode.value;
 
-if(zipcode.length === 5) {
-    return true; 
+    if(zipcode.length === 5 && numbersOnly.match(/^\d+/)) {
+            return true; 
 }
-    else { 
-        alert("zipcode must be 5 digits");
+        else { 
+        alert("5 numeric characters requied for zipcode");
         return false;
 
     }
@@ -151,7 +151,7 @@ function validatePhoneNumber() {
       return true;
     }
     else {
-      alert("10 digits required for phone number");
+      alert("10 numeric characters required for phone number");
       return false;
     }
   }
