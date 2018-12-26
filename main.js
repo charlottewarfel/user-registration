@@ -15,6 +15,27 @@ function check(event) {
         return false;
     }
 
+    var addressIsValid = validateAddress();
+
+    if(!addressIsValid) {
+
+        return false;
+}
+
+
+var cityIsValid = validateCity();
+if (!cityIsValid) {
+
+    return false;
+}
+
+    
+var stateIsValid = validateState();
+    if (!stateIsValid)  {
+
+        return false;
+    }
+
     var zipcodeIsValid = validateZipcode();
     if (!zipcodeIsValid) {
 
@@ -130,15 +151,72 @@ function validateLastName()
     return true;
 }
 
+
+
+function validateAddress() {
+
+    var address = document.userform.address.value;
+     
+    if(address !== null && address !== "")
+    {
+
+        return true;
+    }
+    else{
+        alert("Address is required");
+        return false;
+    }
+
+
+}
+
+function validateCity() {
+
+    var city = document.userform.city.value;
+     
+    if(city!== null && city !== "")
+    {
+
+        return true;
+    }
+    else{
+        alert("City is required");
+        return false;
+    }
+
+
+}
+
+function validateState() {
+
+    var state = document.userform.state.value;
+    var lettersOnly = document.userform.state.value;
+
+    if(state.length === 2 && lettersOnly.match(/^[a-zA-Z]+$/))
+
+    {
+
+        return true;
+    }
+
+        else{
+        alert("2 letters required for state");
+        return false;
+    }
+}
+
+
+
 function validateZipcode() {
     var zipcode = document.userform.zipcode.value;
     var numbersOnly = document.userform.zipcode.value;
 
-    if(zipcode.length === 5 && numbersOnly.match(/^\d+/)) {
+    if(zipcode.length === 5 && numbersOnly.match(/^\d+/)) 
+    {
             return true; 
 }
         else { 
-        alert("5 numeric characters requied for zipcode");
+        alert("5 numeric characters required for zipcode");
         return false;
 
     }
