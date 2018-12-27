@@ -1,7 +1,19 @@
 "use strict"
 function check(event) {
-    
     event.preventDefault();
+
+    function validateForm(event) {
+            if (formIsValid) {
+
+                renderUserInfo() 
+
+
+                
+
+            }
+
+    }
+
     
     var firstNameIsValid = validateFirstName();
     if ( !firstNameIsValid) { 
@@ -144,7 +156,7 @@ function validateAddress() {
 
     var address = document.userform.address.value;
      
-    if(address !== null && address !== "")
+    if(address.length === 0)
     {
 
         return true;
