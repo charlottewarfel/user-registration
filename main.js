@@ -123,6 +123,7 @@ var userform = document.querySelector("form")
 
 
 
+
 function validateFirstName() 
 {
     var first = document.getElementById('firstname').value;
@@ -264,7 +265,30 @@ var verifyPswd = function () {
         return false;
     }
 }
+// charlotte this is where you're working. 
+
+// function printUserInfo() {
+
+var string1 = "Thank you for registering. You are registered as: ";
+var stringFirstName = document.getElementById('firstname').value;
+// var stringLastName = document.userform.lastname.value;
+// var string2 = "Your information is as follows: ";
+// var stringStreet = "Street Address ";
+// var stringAddress = userform.address.value;
+// var stringCity = userform.city.value;
+// var stringState = userform.state.value;
+// var stringZipcode = userform.zipcode.value;
+// var string3 = "Email ";
+// var stringEmail = document.userform.email.value;
+// var string4 = "Phone ";
+// var stringPhone = document.userform.phone.value;
 
 
-// I need to verify lenght of zipcode and that it's numbers only. verify phone number, require all fields
-// put requirements on password. make State abbreivations in a dropdown.
+console.log(string1.concat(' ', stringFirstName));
+
+// }
+
+
+
+
+
