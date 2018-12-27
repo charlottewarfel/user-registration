@@ -191,9 +191,8 @@ function validateCity() {
 function validateState() {
 
     var state = document.userform.state.value;
-    var lettersOnly = document.userform.state.value;
 
-    if(state.length === 2 && lettersOnly.match(/^[a-zA-Z]+$/))
+    if(state.length === 2 && state.match(/^[a-zA-Z]+$/))
 
     {
 
@@ -210,9 +209,8 @@ function validateState() {
 
 function validateZipcode() {
     var zipcode = document.userform.zipcode.value;
-    var numbersOnly = document.userform.zipcode.value;
 
-    if(zipcode.length === 5 && numbersOnly.match(/^\d+/)) 
+    if(zipcode.length === 5 && zipcode.match(/^\d+/)) 
     {
             return true; 
 }
