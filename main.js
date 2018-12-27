@@ -156,7 +156,7 @@ function validateAddress() {
 
     var address = document.userform.address.value;
      
-    if(address.length === 0)
+    if(address.length == 0) 
     {
 
         return true;

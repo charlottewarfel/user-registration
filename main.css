@@ -41,6 +41,11 @@ label {
         margin: 1em;
     }
 
+    .button {
+
+        text-align: center;
+    }
+
 
 
 #city {
