@@ -265,12 +265,14 @@ var verifyPswd = function () {
         return false;
     }
 }
+
+
 // charlotte this is where you're working. 
 
 // function printUserInfo() {
 
-var string1 = "Thank you for registering. You are registered as: ";
-var stringFirstName = document.getElementById('firstname').value;
+// var string1 = "Thank you for registering. You are registered as: ";
+// var stringFirstName = document.userform.firstname.value;
 // var stringLastName = document.userform.lastname.value;
 // var string2 = "Your information is as follows: ";
 // var stringStreet = "Street Address ";
@@ -284,9 +286,15 @@ var stringFirstName = document.getElementById('firstname').value;
 // var stringPhone = document.userform.phone.value;
 
 
-console.log(string1.concat(' ', stringFirstName));
+// console.log(string1.concat(' ', stringFirstName));
 
 // }
+
+// Dan. 
+// I implemented String.concat() without success. I'm only grabbing string1 in the console. 
+// 
+
+// 
 
 
 
