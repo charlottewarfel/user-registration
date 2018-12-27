@@ -69,50 +69,36 @@ var stateIsValid = validateState();
     var userFirstName = document.createElement('div');
                         userFirstName.textContent = document.userform.firstname.value;
 
-
     var printParent = document.getElementById('print');
                         printParent.appendChild(userFirstName);
 
     var userLastName = document.createElement('div');
                         userLastName.textContent = document.userform.lastname.value;
-                        document.getElementById('print');
                         printParent.appendChild(userLastName);
 
     var userAddress = document.createElement('div');
                         userAddress.textContent = document.userform.address.value;
-                        document.getElementById('print');
                         printParent.appendChild(userAddress);
 
-    
     var userCity = document.createElement('div');
                         userCity.textContent = document.userform.city.value;
-                        document.getElementById('print');
+                       
                         printParent.appendChild(userCity);
-
-
 
     var userState = document.createElement('div');
                         userState.textContent = document.userform.state.value;
-                        document.getElementById('print');
                         printParent.appendChild(userState);
-
-
 
     var userZipcode = document.createElement('div');
                         userZipcode.textContent = document.userform.zipcode.value;
-                        document.getElementById('print');
                         printParent.appendChild(userZipcode);
-
-
 
     var userPhone= document.createElement('div');
                     userPhone.textContent = document.userform.phone.value;
-                    document.getElementById('print');
                     printParent.appendChild(userPhone);
 
     var userEmail = document.createElement('div');
                         userEmail.textContent = document.userform.email.value;
-                        document.getElementById('print');
                         printParent.appendChild(userEmail);
 
 
@@ -267,32 +253,41 @@ var verifyPswd = function () {
 
 // charlotte this is where you're working. 
 
-// function printUserInfo() {
-
-// var string1 = "Thank you for registering. You are registered as: ";
-// var stringFirstName = document.userform.firstname.value;
-// var stringLastName = document.userform.lastname.value;
-// var string2 = "Your information is as follows: ";
-// var stringStreet = "Street Address ";
-// var stringAddress = userform.address.value;
-// var stringCity = userform.city.value;
-// var stringState = userform.state.value;
-// var stringZipcode = userform.zipcode.value;
-// var string3 = "Email ";
-// var stringEmail = document.userform.email.value;
-// var string4 = "Phone ";
-// var stringPhone = document.userform.phone.value;
+function userPrintInfo() {
 
 
-// console.log(string1.concat(' ', stringFirstName));
+}
 
-// }
+var string1 = "Thank you for registering. You are registered as: ";
+var stringFirstName = document.userform.firstname.value;
+var stringLastName = document.userform.lastname.value;
+var string2 = "Your information is as follows: ";
+var stringStreet = "Street Address ";
+var stringAddress = userform.address.value;
+var stringCity = userform.city.value;
+var stringState = userform.state.value;
+var stringZipcode = userform.zipcode.value;
+var string3 = "Email ";
+var stringEmail = document.userform.email.value;
+var string4 = "Phone ";
+var stringPhone = document.userform.phone.value;
 
-// Dan. 
-// I implemented String.concat() without success. I'm only grabbing string1 in the console. 
-// 
 
-// 
+console.log(string1.concat(' ', stringFirstName));
+
+
+
+// Thanks for registering. You have created an account as <first name> <last name>.
+// Your contact information:
+//   Address: <street>, <state> <zip>.
+//   Email: <email>
+//   Phone: <phone></phone>
+
+// // Dan. 
+// // I implemented String.concat() without success. I'm only grabbing string1 in the console. 
+// // 
+
+// // 
 
 
 
