@@ -240,8 +240,7 @@ function validateEmail() {
     var dotpos = emailID.lastIndexOf(".");
 
     if (atpos < 1 || (dotpos - atpos < 2)) {
-        alert("Please enter correct email ID")
-        document.userform.email.focus();
+        alert("Please enter correct email ID");
         return false;
     }
     return true;
