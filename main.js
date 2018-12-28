@@ -62,8 +62,15 @@ var stateIsValid = validateState(event);
     }
 
 
-    var passwordIsValid = verifyPswd(event);
-    if (!passwordIsValid) {
+    // var passwordIsValid = verifyPswd(event);
+    // if (!passwordIsValid) {
+
+    //     return false;
+
+    // }
+
+    var passwordIsValid = validatePassword(event);
+    if(!passwordIsValid)  {
 
         return false;
 
@@ -242,20 +249,37 @@ function validateEmail(event) {
     return true;
 }
 
+function validatePassword(event) {
 
-var verifyPswd = function() {
+    var pswdVerified = event.target.password.value;
+    var confirmPswdVerified = event.target.confirm_password.value;
 
-    if (document.getElementById('password').value ==
-        document.getElementById('confirm_password').value) {
-
+    if( pswdVerified == confirmPswdVerified) {
 
         return true;
-    } else {
-       
-            alert("Please verify Password and Confirm Password match")
+
+    }
+
+    else{
+        alert("Please verify Password and Confirm Password match ");
         return false;
     }
 }
+
+
+// var verifyPswd = function() {
+
+//     if (document.getElementById('password').value ==
+//         document.getElementById('confirm_password').value) {
+
+
+//         return true;
+//     } else {
+       
+//             alert("Please verify Password and Confirm Password match")
+//         return false;
+//     }
+// }
 
 
 // // charlotte this is where you're working. 
