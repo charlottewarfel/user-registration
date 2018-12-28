@@ -46,6 +46,11 @@ label {
         text-align: center;
     }
 
+    #address {
+
+        width: 166px;
+    }
+
 
 
 #city {
@@ -62,12 +67,7 @@ label {
     width: 50px;
 }
 
- /* .button {
-    I want to style the button to look like a button. 
-    text-align: center;
-    border-style: solid black;
-    box-shadow :black;
-}   */
+
 
 input,
 textarea {
@@ -80,23 +80,10 @@ By default, textareas have a monospace font */
     border: 1px solid #999;
 }
 
-input[type=text]:focus {
-    /* To give a little highlight on active elements */
+input:focus {
     background-color: lightblue;
-
 }
 
-input[type=email]:focus {
-    /* To give a little highlight on active elements */
-    background-color: lightblue;
-
-}
-
-input[type=number]:focus {
-    /* To give a little highlight on active elements */
-    background-color: lightblue;
-
-}
 
 
 
