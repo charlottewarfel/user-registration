@@ -158,12 +158,13 @@ function validateAddress() {
      
     if(address.length == 0) 
     {
-
-        return true;
-    }
-    else{
         alert("Address is required");
         return false;
+    
+    }
+    else{
+        return true;
+        
     }
 
 
@@ -221,8 +222,9 @@ function validateZipcode() {
 }
 
 function validatePhoneNumber() {
-    var phonenum= /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-    if(phone.value.match(phonenum)) {
+    var phone = document.userform.phone.value;
+
+    if(phone.match(/^[0-9]{10}$/)) {
       return true;
     }
     else {
