@@ -1,33 +1,28 @@
 "use strict"
 function check(event) {
     event.preventDefault();
+    // validateForm(event);
+            // if (formIsValid) {
 
-    function validateForm(event) {
-            if (formIsValid) {
-
-                renderUserInfo() 
+            //     renderUserInfo() 
+            // }
 
 
-                
-
-            }
-
-    }
 
     
-    var firstNameIsValid = validateFirstName();
+    var firstNameIsValid = validateFirstName(event);
     if ( !firstNameIsValid) { 
 
         return false;
     }
 
-    var lastNameIsValid = validateLastName();
+    var lastNameIsValid = validateLastName(event);
     if ( !lastNameIsValid) { 
 
         return false;
     }
 
-    var addressIsValid = validateAddress();
+    var addressIsValid = validateAddress(event);
 
     if(!addressIsValid) {
 
@@ -35,40 +30,47 @@ function check(event) {
 }
 
 
-var cityIsValid = validateCity();
+var cityIsValid = validateCity(event);
 if (!cityIsValid) {
 
     return false;
 }
 
     
-var stateIsValid = validateState();
+var stateIsValid = validateState(event);
     if (!stateIsValid)  {
 
         return false;
     }
 
-    var zipcodeIsValid = validateZipcode();
+    var zipcodeIsValid = validateZipcode(event);
     if (!zipcodeIsValid) {
 
         return false;
     }
 
-    var emailIsValid = validateEmail();
+    var emailIsValid = validateEmail(event);
     if (!emailIsValid) {
 
         return false;
     }
 
-    var phoneIsValid = validatePhoneNumber();
+    var phoneIsValid = validatePhoneNumber(event);
     if (!phoneIsValid) {
 
         return false;
     }
 
 
-    var passwordIsValid = verifyPswd();
-    if (!passwordIsValid) {
+    // var passwordIsValid = verifyPswd(event);
+    // if (!passwordIsValid) {
+
+    //     return false;
+
+    // }
+
+    var passwordIsValid = validatePassword(event);
+    if(!passwordIsValid)  {
 
         return false;
 
@@ -79,52 +81,53 @@ var stateIsValid = validateState();
 
 
     var userFirstName = document.createElement('div');
-                        userFirstName.textContent = document.userform.firstname.value;
+                        userFirstName.textContent = event.target.firstname.value;
+                     
 
-    var printParent = document.getElementById('print');
+
+                       
+    var printParent = document.getElementById("print");
                         printParent.appendChild(userFirstName);
 
+
+
     var userLastName = document.createElement('div');
-                        userLastName.textContent = document.userform.lastname.value;
+                        userLastName.textContent = event.target.lastname.value;
                         printParent.appendChild(userLastName);
 
     var userAddress = document.createElement('div');
-                        userAddress.textContent = document.userform.address.value;
+                        userAddress.textContent = event.target.address.value;
                         printParent.appendChild(userAddress);
 
     var userCity = document.createElement('div');
-                        userCity.textContent = document.userform.city.value;
-                       
+                        userCity.textContent = event.target.city.value;
                         printParent.appendChild(userCity);
 
     var userState = document.createElement('div');
-                        userState.textContent = document.userform.state.value;
+                        userState.textContent = event.target.state.value;
                         printParent.appendChild(userState);
 
     var userZipcode = document.createElement('div');
-                        userZipcode.textContent = document.userform.zipcode.value;
+                        userZipcode.textContent = event.target.zipcode.value;
                         printParent.appendChild(userZipcode);
 
     var userPhone= document.createElement('div');
-                    userPhone.textContent = document.userform.phone.value;
+                    userPhone.textContent = event.target.phone.value;
                     printParent.appendChild(userPhone);
 
     var userEmail = document.createElement('div');
-                        userEmail.textContent = document.userform.email.value;
+                        userEmail.textContent = event.target.email.value;
                         printParent.appendChild(userEmail);
 
-
 }
+
 
 var userform = document.querySelector("form")
         userform.addEventListener('submit', check);
 
-
-
-
-function validateFirstName() 
-{
-    var first = document.getElementById('firstname').value;
+     
+function validateFirstName(event) {
+    var first = event.target.firstname.value;
    
         if (!first.match(/^[a-zA-Z]+$/)) 
 
@@ -136,9 +139,9 @@ function validateFirstName()
     return true;
 }
 
-function validateLastName() 
+function validateLastName(event) 
 {
-    var last = document.getElementById('lastname').value;
+    var last = event.target.lastname.value;
    
         if (!last.match(/^[a-zA-Z]+$/)) 
 
@@ -152,9 +155,9 @@ function validateLastName()
 
 
 
-function validateAddress() {
+function validateAddress(event) {
 
-    var address = document.userform.address.value;
+    var address = event.target.address.value;
      
     if(address.length == 0) 
     {
@@ -170,9 +173,9 @@ function validateAddress() {
 
 }
 
-function validateCity() {
+function validateCity(event) {
 
-    var city = document.userform.city.value;
+    var city = event.target.city.value;
      
     if(city!== null && city !== "")
     {
@@ -187,9 +190,9 @@ function validateCity() {
 
 }
 
-function validateState() {
+function validateState(event) {
 
-    var state = document.userform.state.value;
+    var state = event.target.state.value;
 
     if(state.length === 2 && state.match(/^[a-zA-Z]+$/))
 
@@ -206,8 +209,8 @@ function validateState() {
 
 
 
-function validateZipcode() {
-    var zipcode = document.userform.zipcode.value;
+function validateZipcode(event) {
+    var zipcode = event.target.zipcode.value;
 
     if(zipcode.length === 5 && zipcode.match(/^\d+/)) 
     {
@@ -221,8 +224,8 @@ function validateZipcode() {
 
 }
 
-function validatePhoneNumber() {
-    var phone = document.userform.phone.value;
+function validatePhoneNumber(event) {
+    var phone = event.target.phone.value;
 
     if(phone.match(/^[0-9]{10}$/)) {
       return true;
@@ -234,8 +237,8 @@ function validatePhoneNumber() {
   }
 
 
-function validateEmail() {
-    var emailID = document.userform.email.value;
+function validateEmail(event) {
+    var emailID = event.target.email.value;
      var atpos = emailID.indexOf("@");
     var dotpos = emailID.lastIndexOf(".");
 
@@ -246,47 +249,62 @@ function validateEmail() {
     return true;
 }
 
+function validatePassword(event) {
 
-var verifyPswd = function () {
+    var pswdVerified = event.target.password.value;
+    var confirmPswdVerified = event.target.confirm_password.value;
 
-    if (document.getElementById('password').value ==
-        document.getElementById('confirm_password').value) {
-        document.getElementById('message').style.color = 'green';
-        document.getElementById('message').textContent = 'MATCHING';
+    if( pswdVerified == confirmPswdVerified) {
 
         return true;
-    } else {
-        document.getElementById('message').style.color = 'red';
-        document.getElementById('message').textContent = 'NOT MATCHING';
 
+    }
+
+    else{
+        alert("Please verify Password and Confirm Password match ");
         return false;
     }
 }
 
 
-// charlotte this is where you're working. 
+// var verifyPswd = function() {
 
-function userPrintInfo() {
-
-
-}
-
-var string1 = "Thank you for registering. You are registered as: ";
-var stringFirstName = document.userform.firstname.value;
-var stringLastName = document.userform.lastname.value;
-var string2 = "Your information is as follows: ";
-var stringStreet = "Street Address ";
-var stringAddress = userform.address.value;
-var stringCity = userform.city.value;
-var stringState = userform.state.value;
-var stringZipcode = userform.zipcode.value;
-var string3 = "Email ";
-var stringEmail = document.userform.email.value;
-var string4 = "Phone ";
-var stringPhone = document.userform.phone.value;
+//     if (document.getElementById('password').value ==
+//         document.getElementById('confirm_password').value) {
 
 
-console.log(string1.concat(' ', stringFirstName));
+//         return true;
+//     } else {
+       
+//             alert("Please verify Password and Confirm Password match")
+//         return false;
+//     }
+// }
+
+
+// // charlotte this is where you're working. 
+
+// function userPrintInfo() {
+
+
+// }
+
+// var string1 = "Thank you for registering. You are registered as: ";
+// var stringFirstName = document.userform.firstname.value;
+// var stringLastName = document.userform.lastname.value;
+// var string2 = "Your information is as follows: ";
+// var stringStreet = "Street Address ";
+// var stringAddress = userform.address.value;
+// var stringCity = userform.city.value;
+// var stringState = userform.state.value;
+// var stringZipcode = userform.zipcode.value;
+// var string3 = "Email ";
+// var stringEmail = document.userform.email.value;
+// var string4 = "Phone ";
+// var stringPhone = document.userform.phone.value;
+
+
+// console.log(string1.concat(' ', stringFirstName));
 
 
 
